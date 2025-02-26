@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="TestSuite">
+
+    <listeners>
+        <listener class-name="listeners.CustomListener"></listener>
+    </listeners>
+
+<parameter name="browsername" value="firefox"/>
+
+    <test name="Check that user is create employee and check if employee added">
+        <classes>
+            <class name="Testcases.TC01_LoginPage"> </class>
+            <class name="Testcases.TC02_HomePage"> </class>
+            <class name="Testcases.TC03_CreateNewEmployee"> </class>
+            <class name="Testcases.TC04_EmployeeSearch"> </class>
+            <class name="Testcases.TC05_CreateNewAdmin"> </class>
+            <class name="Testcases.TC06_SearchForAdminUser"> </class>
+
+        </classes>
+    </test>
+
+</suite>
+
+
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="TestSuite">
+
+<parameter name="browsername" value=""/>
+
+<test name="CheckRetryCase">
+    <classes>
+        <class name="Testcases.TC01_LoginPage">
+            <methods>
+                <include name="loginToOrangeHRM_N">
+                    <retryAnalyzer class="RetryAnalyzer"/>
+                </include>
+            </methods>
+        </class>
+    </classes>
+</test>
+
+</suite>
+

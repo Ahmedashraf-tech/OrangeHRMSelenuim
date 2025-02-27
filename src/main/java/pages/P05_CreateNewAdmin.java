@@ -71,14 +71,16 @@ public class P05_CreateNewAdmin extends PageBase{
 
 
         // shortWait(driver).until(ExpectedConditions.visibilityOfElementLocated(this.EmployeeName));
-        actions.moveToElement(driver.findElement(EmployeeName)).click().sendKeys(Keys.ARROW_DOWN).pause(1000).perform();       // actions.sendKeys(Keys.ARROW_DOWN).perform();
-
+        actions.sendKeys(Keys.ARROW_DOWN).perform();
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
+        actions.sendKeys(Keys.ENTER).perform();
+
 
         return this;
     }

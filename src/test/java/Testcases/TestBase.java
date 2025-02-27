@@ -25,21 +25,27 @@ public class TestBase {
     protected String PROJECT_URL;
     protected Logger log;
 
-
     private void setProjectDetails() throws IOException {
-        // TODO: Step1: define object of properties file
-        readProperty = new FileInputStream(
-                System.getProperty("user.dir") + "/src/test/resources/properties/environment.properties");
+        // Define object of properties file
+        String propertyFilePath = System.getProperty("user.dir") + "/src/test/resources/properties/environment.properties";
+        readProperty = new FileInputStream(propertyFilePath);
         prop = new Properties();
         prop.load(readProperty);
 
-        // define project name from properties file
+        // Define project name and URL from properties file
         PROJECT_NAME = prop.getProperty("projectName");
         PROJECT_URL = prop.getProperty("url");
+
+        // Log the values for debugging
+        if (PROJECT_NAME == null || PROJECT_URL == null) {
+            log.error("Could not read project details from the properties file.");
+        } else {
+            log.info("Project Name: " + PROJECT_NAME);
+            log.info("Project URL: " + PROJECT_URL);
+        }
     }
 
-
-    // You can call setProjectDetails() inside your constructor or any method that needs project details
+    // Initialize method
     public void initialize() throws IOException {
         setProjectDetails();  // Initialize project details by reading the properties file
     }
@@ -55,22 +61,16 @@ public class TestBase {
     public void OpenBrowser(@Optional String browsername) throws AWTException {
         setDriver(DriverFactory.getNewInstance(""));
 
-        // getDriver().manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        // You can now use the PROJECT_URL that was read from the properties file
+        log.info("Opening browser with URL: " + PROJECT_URL);  // Log the URL
+        getDriver().get(PROJECT_URL);  // Open the project URL
 
-        getDriver().get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-
-        // open browser network
+        // Open browser network
         openBrowserNetworkTab();
-
     }
 
     @AfterTest
     public void TearDown() {
-           quitBrowser(getDriver());
+        quitBrowser(getDriver());
     }
-
-    /* @AfterSuite
-    public void afterSuite() throws Exception {
-
-    } */
 }

@@ -291,7 +291,6 @@ public static String generateRandomCity() {
             // Press and release ]
             robot.keyPress(KeyEvent.VK_CLOSE_BRACKET);
             robot.keyRelease(KeyEvent.VK_CLOSE_BRACKET);
-
             // Release Ctrl
             robot.keyRelease(KeyEvent.VK_CONTROL);
 

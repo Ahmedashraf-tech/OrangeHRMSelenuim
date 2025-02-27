@@ -19,19 +19,20 @@ public class P06_SearchForAdminUser extends PageBase {
     }
 
     // private final By AdminLink =By.xpath("//a[@href='/web/index.php/admin/viewAdminModule']");
-    private final By Collapse = By.xpath("//button[@class='oxd-icon-button' and @type='button'][1]");
+    private final By ClickOnCollapse = By.xpath("//button[@class='oxd-icon-button' and @type='button']//i[@class='oxd-icon bi-caret-down-fill']");
     private final By Username = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2] | (//input[@class='oxd-input oxd-input--focus'])[2]");
     private final By UserRole = By.xpath("(//div[@class='oxd-select-text oxd-select-text--active'][1] or @class='oxd-select-text oxd-select-text--focus'][1]");
     private final By EmployeeName = By.xpath(("//input[@placeholder='Type for hints...'])"));
     private final By Status = By.xpath("(//div[@class='oxd-select-text-input'][2]");
     private final By SearchButton = By.xpath("//button[@type='submit']");
-    private final By RecordFound = By.xpath("(//span[@class='oxd-text oxd-text--span'])[1]");
-    private final By Record = By.xpath("//span[normalize-space(text())='(1) Record Found']");
+    private final By RecordFound = By.xpath("//div[@class='orangehrm-horizontal-padding orangehrm-vertical-padding']//span[@class='oxd-text oxd-text--span' and text()='(1) Record Found']");
+
+    // private final By Record = By.xpath("//span[normalize-space(text())='(1) Record Found']");
 
     public P06_SearchForAdminUser OpenCollapse ()
     {
-        shortWait(driver).until(ExpectedConditions.elementToBeClickable(this.Collapse));
-        driver.findElement(Collapse).click();
+       longWait(driver).until(ExpectedConditions.elementToBeClickable(this.ClickOnCollapse));
+        driver.findElement(ClickOnCollapse).click();
         return this;
     }
 
@@ -94,8 +95,8 @@ public class P06_SearchForAdminUser extends PageBase {
 
     public String GetRecordFoundText ()
     {
-        longWait(driver).until(ExpectedConditions.visibilityOfElementLocated(this.Record));
-        String GetRecordText = driver.findElement(Record).getText();
+        longWait(driver).until(ExpectedConditions.visibilityOfElementLocated(this.RecordFound));
+        String GetRecordText = driver.findElement(RecordFound).getText();
         return GetRecordText;
     }
 

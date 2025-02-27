@@ -6,12 +6,12 @@ import pages.P03_CreateNewEmployee;
 import utli.Utility;
 
 import static drivers.DriverHolder.getDriver;
-import static utli.Utility.generateRandomName;
+import static utli.Utility.generateName;
 public class TC03_CreateNewEmployee extends TestBase{
 
-    public static String Firstname = generateRandomName(1);
-    public static String Middlename = generateRandomName(2);
-    public static String Lastname = generateRandomName(3);
+    public static String Firstname = generateName(5);
+    public static String Middlename = generateName(5);
+    public static String Lastname = generateName(5);
     public static String Fullname = Firstname + " " + Middlename + " " + Lastname;
 
     public static final String EmployeesID = Utility.generateRandomID();

@@ -30,6 +30,7 @@ public class P05_CreateNewAdmin extends PageBase{
     private final By SaveButton = By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']");
     private final By Record = By.xpath("//span[@class='oxd-text oxd-text--span' and contains(text(), 'Records Found')]");
 
+    private final By EmployeeOptionEnabled = By.xpath("//div[@class='oxd-autocomplete-text-input--after']");
 
     public P05_CreateNewAdmin OpenAdminPage ()
     {
@@ -66,11 +67,18 @@ public class P05_CreateNewAdmin extends PageBase{
         return this;
     }
 
-    public P05_CreateNewAdmin SelectEmployeeName ()
-    {
+    public P05_CreateNewAdmin SelectEmployeeName ()  {
 
-        actions.sendKeys(Keys.ARROW_DOWN).perform();
-        actions.sendKeys(Keys.ENTER).perform();
+
+        // shortWait(driver).until(ExpectedConditions.visibilityOfElementLocated(this.EmployeeName));
+        actions.moveToElement(driver.findElement(EmployeeName)).click().sendKeys(Keys.ARROW_DOWN).pause(1000).perform();       // actions.sendKeys(Keys.ARROW_DOWN).perform();
+
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         return this;
     }
@@ -102,7 +110,14 @@ public class P05_CreateNewAdmin extends PageBase{
     {
         longWait(driver).until(ExpectedConditions.visibilityOfElementLocated(this.Password));
         driver.findElement(ConfirmPassword).clear();
+
+        if (password.length() > 8) {
+            password = password.substring(0, 8);  // Trim to the first 8 characters
+        }
+
         driver.findElement(Password).sendKeys(password);
+
+
         return this;
     }
 
@@ -112,6 +127,7 @@ public class P05_CreateNewAdmin extends PageBase{
         longWait(driver).until(ExpectedConditions.visibilityOfElementLocated(this.ConfirmPassword));
         driver.findElement(ConfirmPassword).clear();
         driver.findElement(ConfirmPassword).sendKeys(confirmpassword);
+
         return this;
     }
 

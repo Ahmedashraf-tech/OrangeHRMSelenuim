@@ -74,6 +74,25 @@ public class Utility {
     }
 
 
+    public static String generateName(int maxLength) {
+        // Define the characters that can be part of the name (letters only)
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+        // Create a Random object to generate random numbers
+        Random random = new Random();
+
+        // Use StringBuilder to build the random name
+        StringBuilder randomName = new StringBuilder();
+
+        // Generate random characters and append them to the StringBuilder
+        for (int i = 0; i < maxLength; i++) {
+            int index = random.nextInt(characters.length());
+            randomName.append(characters.charAt(index));
+        }
+
+        return randomName.toString();
+    }
+
 
     //generate Random name
     public static String generateRandomName(int n) {

@@ -9,8 +9,8 @@ import static drivers.DriverHolder.getDriver;
 public class TC05_CreateNewAdmin extends TestBase
 {
 
-    public static String Username = Utility.generateRandomName(8);
-    final String Password = Utility.generateComplexPassword(8);
+    public static String Username = Utility.generateName(5);
+    final static String Password = Utility.generateComplexPassword(8);
     // String ConfirmPassword = Password;
 
     @Test(priority = 1,description = "Check the ability to create new admin" )

@@ -9,7 +9,6 @@ import java.awt.*;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 import static drivers.DriverHolder.getDriver;
 import static drivers.DriverHolder.setDriver;
@@ -20,12 +19,10 @@ import static utli.Utility.openBrowserNetworkTab;
 @Listeners({listeners.CustomListener.class})
 public class TestBase {
 
-
     private FileInputStream readProperty;
     private Properties prop;
     protected String PROJECT_NAME;
     protected String PROJECT_URL;
-
     protected Logger log;
 
 

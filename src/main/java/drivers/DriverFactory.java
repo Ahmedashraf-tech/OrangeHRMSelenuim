@@ -95,7 +95,7 @@ public class DriverFactory {
                 // Optionally add more obfuscation, like custom user agent
                 chromeOptions.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36");
                 chromeOptions.addArguments("start-maximized");
-                // chromeOptions.addArguments("--incognito");
+                chromeOptions.addArguments("--incognito");
                 chromeOptions.addArguments("--disable-web-security");
                 chromeOptions.addArguments("--no-proxy-server");
                 chromeOptions.addArguments("--remote-allow-origins=*");

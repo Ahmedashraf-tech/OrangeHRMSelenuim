@@ -26,23 +26,15 @@ public class TestBase {
     protected Logger log;
 
     private void setProjectDetails() throws IOException {
-        // Define object of properties file
-        String propertyFilePath = System.getProperty("user.dir") + "/src/test/resources/properties/environment.properties";
-        readProperty = new FileInputStream(propertyFilePath);
+        // TODO: Step1: define object of properties file
+        readProperty = new FileInputStream(
+                System.getProperty("user.dir") + "/src/test/resources/properties/environment.properties");
         prop = new Properties();
         prop.load(readProperty);
 
-        // Define project name and URL from properties file
+        // define project name from properties file
         PROJECT_NAME = prop.getProperty("projectName");
         PROJECT_URL = prop.getProperty("url");
-
-        // Log the values for debugging
-        if (PROJECT_NAME == null || PROJECT_URL == null) {
-            log.error("Could not read project details from the properties file.");
-        } else {
-            log.info("Project Name: " + PROJECT_NAME);
-            log.info("Project URL: " + PROJECT_URL);
-        }
     }
 
     // Initialize method
@@ -54,18 +46,17 @@ public class TestBase {
     public void beforeSuite() throws Exception {
         DOMConfigurator.configure(System.getProperty("user.dir") + "/src/test/resources/log4j.xml");
         log = Logger.getLogger(TestBase.class);
+        initialize();
     }
 
     @Parameters("browsername")
     @BeforeTest
     public void OpenBrowser(@Optional String browsername) throws AWTException {
-        setDriver(DriverFactory.getNewInstance(""));
 
-        // You can now use the PROJECT_URL that was read from the properties file
-        log.info("Opening browser with URL: " + PROJECT_URL);  // Log the URL
-        getDriver().get(PROJECT_URL);  // Open the project URL
+        setDriver(DriverFactory.getNewInstance(browsername));
 
-        // Open browser network
+        getDriver().get(PROJECT_URL);
+
         openBrowserNetworkTab();
     }
 

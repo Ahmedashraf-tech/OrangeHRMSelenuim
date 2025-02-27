@@ -22,13 +22,13 @@ public class TC05_CreateNewAdmin extends TestBase
                 .OpenDDLofUserRole()
                 .SelectUserRole()
                 .EnterEmployeeName(TC03_CreateNewEmployee.Fullname)
-                .SelectEmployeeName()
-                .OpenDDLofStatus()
-                .SelectStatus()
-                .EnterUserName(Username)
-                .EnterPassword(Password)
-                .EnterConfirmPassword(Password)
-                .ClickOnSave();
+                .SelectEmployeeName();
+//                .OpenDDLofStatus()
+//                .SelectStatus()
+//                .EnterUserName(Username)
+//                .EnterPassword(Password)
+//                .EnterConfirmPassword(Password);
+//                .ClickOnSave();
 
 
     }

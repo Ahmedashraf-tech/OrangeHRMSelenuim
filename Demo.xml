@@ -6,7 +6,7 @@
         <listener class-name="listeners.CustomListener"></listener>
     </listeners>
 
-<parameter name="browsername" value="firefox"/>
+<parameter name="browsername" value=""/>
 
     <test name="Check that user is create employee and check if employee added">
         <classes>

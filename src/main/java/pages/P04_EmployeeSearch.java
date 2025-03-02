@@ -44,20 +44,6 @@ public class P04_EmployeeSearch extends PageBase{
     }
 
 
-    /* public P04_EmployeeSearch EnterEmployeeName (String fullname)
-    {
-        shortWait(driver).until(ExpectedConditions.visibilityOfElementLocated(this.EmployeeName));
-        driver.findElement(EmployeeName).sendKeys(fullname);
-        return this;
-    }
-
-    public P04_EmployeeSearch SelectEmployeeName ()
-    {
-        shortWait(driver).until(ExpectedConditions.visibilityOfElementLocated(this.SelectEmployeeName));
-        driver.findElement(SelectEmployeeName).click();
-        return this;
-    }*/
-
     public P04_EmployeeSearch ClickOnSearchButton ()
     {
         shortWait(driver).until(ExpectedConditions.elementToBeClickable(this.SearchButton));

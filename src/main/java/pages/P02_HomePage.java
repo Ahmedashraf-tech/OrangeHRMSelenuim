@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class P02_HomePage extends PageBase
 
@@ -12,11 +13,7 @@ public class P02_HomePage extends PageBase
         this.driver=driver;
     }
 
-
     private final By PIMLink = By.xpath("(//li[@class='oxd-main-menu-item-wrapper'])[2]");
-    // By.xpath("//a[@href='/web/index.php/pim/viewPimModule']");
-    // (//li[@class='oxd-main-menu-item-wrapper'])[2]
-    // By.xpath("(//span[text()='PIM'])");
 
     private final By LeaveLink = By.xpath("//h6[@text='Leave']");
 
@@ -38,6 +35,7 @@ public class P02_HomePage extends PageBase
 
     private final By BuzzLink  = By.xpath("//h6[@text='Buzz']");
 
+    private final By Record = By.xpath("//span[@class='oxd-text oxd-text--span'][1]");
 
 
     public P02_HomePage OpenPIMPage ()
@@ -103,6 +101,7 @@ public class P02_HomePage extends PageBase
         driver.findElement(BuzzLink).click();
         return this;
     }
+
 
 
 

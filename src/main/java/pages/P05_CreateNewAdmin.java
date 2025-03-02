@@ -13,6 +13,7 @@ public class P05_CreateNewAdmin extends PageBase{
     public P05_CreateNewAdmin (WebDriver driver)
     {
         this.driver=driver;
+
     }
 
     Actions actions = new Actions(getDriver());
@@ -28,9 +29,8 @@ public class P05_CreateNewAdmin extends PageBase{
     private final By Password = By.xpath("(//input[@type='password'])[1]");
     private final By ConfirmPassword = By.xpath("(//input[@type='password'])[2]");
     private final By SaveButton = By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']");
-    private final By Record = By.xpath("//span[@class='oxd-text oxd-text--span' and contains(text(), 'Records Found')]");
+    private final By Record = By.xpath("//span[@class='oxd-text oxd-text--span'][1]");
 
-    private final By EmployeeOptionEnabled = By.xpath("//div[@class='oxd-autocomplete-text-input--after']");
 
     public P05_CreateNewAdmin OpenAdminPage ()
     {
@@ -38,6 +38,16 @@ public class P05_CreateNewAdmin extends PageBase{
         driver.findElement(AdminLink).click();
         return this;
     }
+
+    public int NoOfTotalRecordsBefore()
+    {
+        shortWait(driver).until(ExpectedConditions.visibilityOfElementLocated(this.Record));
+        String TotalRecords = driver.findElement(Record).getText();
+        String recordsnumberbefore = TotalRecords.replaceAll("[^0-9]", "");
+        int RecordsNumberBefore = Integer.parseInt(recordsnumberbefore);
+        return RecordsNumberBefore;
+    }
+
 
     public P05_CreateNewAdmin ClickOnCreateAdminUser ()
     {
@@ -139,10 +149,15 @@ public class P05_CreateNewAdmin extends PageBase{
         return this;
     }
 
-    /* public String VerifySuccessMessage()
+
+    public int NoOfTotalRecordsAfter()
     {
-        String RecordFound = driver.findElement(Record).getText();
-        return RecordFound;
-    } */
+        shortWait(driver).until(ExpectedConditions.visibilityOfElementLocated(this.Record));
+        String TotalRecords = driver.findElement(Record).getText();
+        String recordsnumberafter = TotalRecords.replaceAll("[^0-9]", "");
+        int RecordsNumberAfter = Integer.parseInt(recordsnumberafter);
+        return RecordsNumberAfter;
+    }
+
 
 }

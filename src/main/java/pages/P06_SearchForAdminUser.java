@@ -29,6 +29,7 @@ public class P06_SearchForAdminUser extends PageBase {
 
     // private final By Record = By.xpath("//span[normalize-space(text())='(1) Record Found']");
 
+
     public P06_SearchForAdminUser OpenCollapse ()
     {
        longWait(driver).until(ExpectedConditions.elementToBeClickable(this.ClickOnCollapse));

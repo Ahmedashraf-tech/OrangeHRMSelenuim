@@ -1,6 +1,6 @@
 package Testcases;
 
-import org.testng.Assert;
+
 import org.testng.annotations.Test;
 import pages.P05_CreateNewAdmin;
 import utli.Utility;
@@ -22,13 +22,15 @@ public class TC05_CreateNewAdmin extends TestBase
                 .OpenDDLofUserRole()
                 .SelectUserRole()
                 .EnterEmployeeName(TC03_CreateNewEmployee.Fullname)
-                .SelectEmployeeName();
-//                .OpenDDLofStatus()
-//                .SelectStatus()
-//                .EnterUserName(Username)
-//                .EnterPassword(Password)
-//                .EnterConfirmPassword(Password);
-//                .ClickOnSave();
+                .SelectEmployeeName()
+                .OpenDDLofStatus()
+                .SelectStatus()
+                .EnterUserName(Username)
+                .EnterPassword(Password)
+                .EnterConfirmPassword(Password)
+                .ClickOnSave();
+
+
 
 
     }

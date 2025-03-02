@@ -16,7 +16,6 @@
             <class name="Testcases.TC04_EmployeeSearch"> </class>
             <class name="Testcases.TC05_CreateNewAdmin"> </class>
             <class name="Testcases.TC06_SearchForAdminUser"> </class>
-
         </classes>
     </test>
 

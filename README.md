@@ -46,17 +46,18 @@
 
 To set up and test the OrangeHRM application locally using Java and Selenium, follow these steps:
 
-1. Clone the repository:
+1. **Clone the repository**:
 
    ```bash
    git clone https://github.com/Ahmedashraf-tech/OrangeHRMSelenuim.git
 
-2. Navigate to the project directory:
+2. **Navigate to the project directory:**
 
-cd OrangeHRMSelenuim
+   ```bash
+   cd OrangeHRMSelenuim
 
 
-3. Set up dependencies:
+3. **Set up dependencies**:
 
    Ensure that you have Maven or Gradle installed.
 
@@ -65,11 +66,11 @@ cd OrangeHRMSelenuim
    mvn clean install
 
 
-4. Configure the application:
+4. **Configure the application**:
 
 Update configuration files such as config.properties or application.properties with necessary settings, including OrangeHRM credentials.
 
-5. Run the tests:
+5. **Run the tests**:
 
 Execute the tests with the following Maven command:
 mvn test

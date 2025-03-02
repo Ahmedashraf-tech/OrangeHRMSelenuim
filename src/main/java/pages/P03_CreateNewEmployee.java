@@ -21,8 +21,10 @@ public class P03_CreateNewEmployee extends PageBase {
     private final By MiddleName = By.xpath("//input[@name='middleName']");
     private final By LastName = By.xpath("//input[@name='lastName']");
     private final By EmployeeID_Fill = By.xpath("(//input[@class='oxd-input oxd-input--active' or @class='oxd-input oxd-input--focus'])[2]");
-    private final By Submit = By.xpath("//button[@type='submit']");
-    private final By PersonalDetails = By.xpath("(//h6[text()='Personal Details'])");
+    private final By Save = By.xpath("//button[@type='submit']");
+    private final By personaldetails = By.xpath("//a[contains(@href, '/web/index.php/pim/viewPersonalDetails/empNumber/')]");
+
+
 
 
     public P03_CreateNewEmployee OpenAddEmployeePage()
@@ -70,13 +72,29 @@ public class P03_CreateNewEmployee extends PageBase {
         return this;
     }
 
-
-    public P03_CreateNewEmployee ClickOnSubmit()
+    public P03_CreateNewEmployee ClickOnSave()
     {
-        shortWait(driver).until(ExpectedConditions.elementToBeClickable(this.Submit));
-        driver.findElement(Submit).click();
+        shortWait(driver).until(ExpectedConditions.elementToBeClickable(this.Save));
+        driver.findElement(Save).click();
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         return this;
     }
+
+
+    public String GetPersonalDetails()
+    {
+
+    longWait(driver).until(ExpectedConditions.visibilityOfElementLocated(this.personaldetails));
+    return driver.findElement(personaldetails).getAttribute("href"); // return the value of href
+    }
+
+
+
+
 
 
 

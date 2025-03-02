@@ -4,9 +4,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.P03_CreateNewEmployee;
 import utli.Utility;
-
 import static drivers.DriverHolder.getDriver;
 import static utli.Utility.generateName;
+
 public class TC03_CreateNewEmployee extends TestBase{
 
     public static String Firstname = generateName(5);
@@ -16,7 +16,9 @@ public class TC03_CreateNewEmployee extends TestBase{
 
     public static final String EmployeesID = Utility.generateRandomID();
 
-    String ExpectedURL = "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/";
+
+    public static String Username = Utility.generateName(5);
+    public String Password = Utility.generateComplexPassword(8);
 
     @Test(priority = 1, description = "Create New Employee")
     public void CreateNewEmployee_P() {
@@ -31,7 +33,13 @@ public class TC03_CreateNewEmployee extends TestBase{
                 .EnterLastName(Lastname)
                 .ClearEmployeeID()
                 .EnterEmployeesID(EmployeesID)
-                .ClickOnSubmit();
+                .ClickOnSave();
+
+
+        String expectedHrefValue = "/web/index.php/pim/viewPersonalDetails/empNumber/";
+        String actualHrefValue = new P03_CreateNewEmployee(getDriver()).GetPersonalDetails();
+
+        Assert.assertTrue(actualHrefValue.contains(expectedHrefValue), "Employee Not Created");
 
     }
 

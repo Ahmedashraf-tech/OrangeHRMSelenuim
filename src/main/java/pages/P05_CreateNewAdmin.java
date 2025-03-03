@@ -80,7 +80,7 @@ public class P05_CreateNewAdmin extends PageBase{
     public P05_CreateNewAdmin SelectEmployeeName ()  {
 
         try {
-            Thread.sleep(2000);
+            Thread.sleep(7000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

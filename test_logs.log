@@ -923,3 +923,44 @@
 2025-03-02 06:19:07  [org.testng.internal.Utils] (main:) [TestNG] Running:
   E:\OrangeHRMProject\testng.xml
 
+2025-03-02 22:28:40  [org.testng.xml.TestNGContentHandler] (main:) It is strongly recommended to add "<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >" at the top of the suite file [E:\OrangeHRMProject\Demo.xml] otherwise TestNG may fail or not work as expected.
+2025-03-03 17:46:51  [org.testng.xml.TestNGContentHandler] (main:) It is strongly recommended to add "<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >" at the top of the suite file [E:\OrangeHRMProject\Demo.xml] otherwise TestNG may fail or not work as expected.
+2025-03-03 17:46:52  [org.testng.internal.Utils] (main:) [TestNG] Running:
+  E:\OrangeHRMProject\Demo.xml
+
+2025-03-03 17:47:01  [Testcases.TestBase] (main:) Login Successfully
+2025-03-03 17:47:47  [org.testng.internal.Utils] (main:) [TestNG] Running:
+  E:\OrangeHRMProject\testng.xml
+
+2025-03-03 17:48:58  [org.testng.xml.TestNGContentHandler] (main:) It is strongly recommended to add "<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >" at the top of the suite file [E:\OrangeHRMProject\Demo.xml] otherwise TestNG may fail or not work as expected.
+2025-03-03 17:48:59  [org.testng.internal.Utils] (main:) [TestNG] Running:
+  E:\OrangeHRMProject\Demo.xml
+
+2025-03-03 17:49:08  [Testcases.TestBase] (main:) Login Successfully
+2025-03-03 17:49:53  [org.testng.internal.Utils] (main:) [TestNG] Running:
+  E:\OrangeHRMProject\testng.xml
+
+2025-03-03 17:50:41  [org.testng.xml.TestNGContentHandler] (main:) It is strongly recommended to add "<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >" at the top of the suite file [E:\OrangeHRMProject\Demo.xml] otherwise TestNG may fail or not work as expected.
+2025-03-03 17:50:42  [org.testng.internal.Utils] (main:) [TestNG] Running:
+  E:\OrangeHRMProject\Demo.xml
+
+2025-03-03 17:50:50  [Testcases.TestBase] (main:) Login Successfully
+2025-03-03 17:51:26  [org.testng.internal.Utils] (main:) [TestNG] Running:
+  E:\OrangeHRMProject\testng.xml
+
+2025-03-03 17:56:28  [org.testng.xml.TestNGContentHandler] (main:) It is strongly recommended to add "<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >" at the top of the suite file [E:\OrangeHRMProject\Demo.xml] otherwise TestNG may fail or not work as expected.
+2025-03-03 17:56:29  [org.testng.internal.Utils] (main:) [TestNG] Running:
+  E:\OrangeHRMProject\Demo.xml
+
+2025-03-03 17:56:37  [Testcases.TestBase] (main:) Login Successfully
+2025-03-03 17:57:07  [org.testng.internal.Utils] (main:) [TestNG] Running:
+  E:\OrangeHRMProject\testng.xml
+
+2025-03-03 17:58:38  [org.testng.xml.TestNGContentHandler] (main:) It is strongly recommended to add "<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >" at the top of the suite file [E:\OrangeHRMProject\Demo.xml] otherwise TestNG may fail or not work as expected.
+2025-03-03 17:58:39  [org.testng.internal.Utils] (main:) [TestNG] Running:
+  E:\OrangeHRMProject\Demo.xml
+
+2025-03-03 17:58:48  [Testcases.TestBase] (main:) Login Successfully
+2025-03-03 17:59:27  [org.testng.internal.Utils] (main:) [TestNG] Running:
+  E:\OrangeHRMProject\testng.xml
+

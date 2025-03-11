@@ -964,3 +964,4 @@
 2025-03-03 17:59:27  [org.testng.internal.Utils] (main:) [TestNG] Running:
   E:\OrangeHRMProject\testng.xml
 
+2025-03-03 21:16:48  [org.testng.xml.TestNGContentHandler] (main:) It is strongly recommended to add "<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >" at the top of the suite file [E:\OrangeHRMProject\Demo.xml] otherwise TestNG may fail or not work as expected.

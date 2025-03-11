@@ -40,64 +40,75 @@ public class P02_HomePage extends PageBase
 
     public P02_HomePage OpenPIMPage ()
     {
+        longWait(driver).until(ExpectedConditions.elementToBeClickable(this.PIMLink));
         driver.findElement(PIMLink).click();
         return this;
     }
 
     public P02_HomePage OpenLeavePage ()
     {
+        shortWait(driver).until(ExpectedConditions.elementToBeClickable(this.LeaveLink));
         driver.findElement(LeaveLink).click();
         return this;
     }
 
     public P02_HomePage OpenTimePage ()
     {
+        shortWait(driver).until(ExpectedConditions.elementToBeClickable(this.TimeLink));
         driver.findElement(TimeLink).click();
         return this;
     }
 
     public P02_HomePage OpenRecruitmentPage ()
     {
+        shortWait(driver).until(ExpectedConditions.elementToBeClickable(this.RecruitmentLink));
         driver.findElement(RecruitmentLink).click();
         return this;
     }
 
     public P02_HomePage OpenMyInfoPage ()
     {
+        shortWait(driver).until(ExpectedConditions.elementToBeClickable(this.MyInfoLink));
         driver.findElement(MyInfoLink).click();
         return this;
     }
 
     public P02_HomePage OpenDashboard ()
     {
+        shortWait(driver).until(ExpectedConditions.elementToBeClickable(this.DashboardLink));
         driver.findElement(DashboardLink).click();
         return this;
     }
 
     public P02_HomePage OpenDirectory ()
     {
+        shortWait(driver).until(ExpectedConditions.elementToBeClickable(this.DirectoryLink));
         driver.findElement(DirectoryLink).click();
         return this;
     }
     public P02_HomePage OpenMaintenance ()
     {
+        shortWait(driver).until(ExpectedConditions.elementToBeClickable(this.MaintenanceLink));
         driver.findElement(MaintenanceLink).click();
         return this;
     }
     public P02_HomePage OpenPerformancePage ()
     {
+        shortWait(driver).until(ExpectedConditions.elementToBeClickable(this.PerformanceLink));
         driver.findElement(PerformanceLink).click();
         return this;
     }
 
     public P02_HomePage OpenClaimPage ()
     {
+        shortWait(driver).until(ExpectedConditions.elementToBeClickable(this.ClaimLink));
         driver.findElement(ClaimLink).click();
         return this;
     }
 
     public P02_HomePage OpenBuzzPage ()
     {
+        shortWait(driver).until(ExpectedConditions.elementToBeClickable(this.BuzzLink));
         driver.findElement(BuzzLink).click();
         return this;
     }
